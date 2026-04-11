@@ -1,0 +1,11 @@
+[Unit]
+Description=Open WebUI Service
+After=network.target
+
+[Service]
+Environment="DATA_DIR=%h/.open-webui"
+ExecStart=%h/.local/bin/uvx --python 3.11 open-webui@latest serve --port 6060
+Restart=always
+
+[Install]
+WantedBy=default.target

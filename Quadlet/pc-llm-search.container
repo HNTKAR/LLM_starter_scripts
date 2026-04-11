@@ -1,0 +1,5 @@
+[Container]
+Environment=SEARXNG_PORT=6061
+Mount=type=volume,source=pv-llm-search.volume,target=/etc/searxng
+Image=docker.io/searxng/searxng:latest
+Pod=pp-llm.pod

@@ -1,0 +1,7 @@
+[Pod]
+ServiceName=pod-llm
+PublishPort=6061:6061
+PodName=pod-llm
+
+[Install]
+WantedBy=default.target
