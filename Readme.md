@@ -6,7 +6,7 @@
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-cp open-webui.service ~/.config/systemd/user/
+cp systemd/open-webui.service ~/.config/systemd/user/
 systemctl --user enable --now open-webui.service
 systemctl --user start open-webui.service
 ```
