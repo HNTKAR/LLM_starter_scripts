@@ -1,5 +1,4 @@
 [Container]
-Environment=SEARXNG_PORT=6061 SEARXNG_VALKEY_URL=http://pc-llm-db:6379/0
 Mount=type=volume,source=pv-llm-db.volume,target=/data
 Image=docker.io/valkey/valkey:9-alpine
 Pod=pp-llm.pod

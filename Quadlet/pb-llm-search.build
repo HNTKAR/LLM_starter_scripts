@@ -1,0 +1,4 @@
+[Build]
+SetWorkingDirectory=%h/.config/containers/containerfiles/pod-llm/search
+ImageTag=pp-llm-search
+

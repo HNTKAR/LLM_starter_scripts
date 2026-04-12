@@ -20,3 +20,12 @@ curl -fsSL https://ollama.com/install.sh | sh
 ollama pull genm
 ollama serve
 ```
+
+```bash
+cd path/to/this/repository
+mkdir -p ~/.config/containers/containerfiles
+ln -s $(pwd)/Dockerfile ~/.config/containers/containerfiles/pod-llm
+cp Quadlet/* ~/.config/containers/systemd/
+systemctl --user daemon-reload
+systemctl --user restart pod-llm.service
+```
