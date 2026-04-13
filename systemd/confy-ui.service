@@ -1,0 +1,10 @@
+[Unit]
+Description=Confy UI Service
+After=network.target
+
+[Service]
+ExecStart=%h/.llm/bin/python %h/comfy/ComfyUI/main.py --enable-manager
+Restart=always
+
+[Install]
+WantedBy=default.target
