@@ -1,0 +1,16 @@
+[Service]
+Environment=NVM_DIR=%h/.nvm
+ExecStartPre=git pull
+ExecStartPre=/bin/bash -c "source $NVM_DIR/nvm.sh && pnpm install"
+ExecStartPre=/bin/bash -c "source $NVM_DIR/nvm.sh && pnpm run build"
+ExecStart=/bin/bash -c "source $NVM_DIR/nvm.sh && pnpm dsh --profile web --no-open"
+WorkingDirectory=%h/llm/deepseek-harness
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=default.target
+
+[Unit]
+Description=DeepSeek Harness Service
+After=network.target
