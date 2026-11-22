@@ -1,0 +1,15 @@
+[Service]
+Environment=MODEL=IQ3_S_256K
+ExecStartPre=%h/.local/bin/strata update
+ExecStart=%h/.local/bin/strata launch --preset $MODEL --no-tui
+ExecStop=%h/.local/bin/strata launch --stop --preset $MODEL
+Restart=on-failure
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
+
+[Unit]
+Description=Strata Service
+After=network.target
